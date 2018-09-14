@@ -1,0 +1,150 @@
+---
+title: "HW_1.5"
+author: "Group name: Chris and Earl's Econometric Adventure"
+date: "Sep 6, 2018"
+output:
+  pdf_document: default
+---
+\newpage
+
+
+## Appendix A
+**Questions: 2,4,7 (all parts), 10 (parts i and iii)**
+\newline
+
+2. Suppose the following equation describes the relationship between the average number of classes missed during a semester(*missed*) and the distance from school (*distance*, measured in miles): $$ \textit{missed} = 3 + 0.2 \textit{distance} $$
+\newline
+
+(i) Sketch this line, being sure to label the axes. How do you interpret the intercept in this equation?
+\newline
+
+**Answer\:**
+\newline
+
+(ii) What is the average number of classes missed for someone who lives five miles away?
+\newline
+
+**Answer\:**
+\newline
+
+(iii) What is the difference in the average number of classes missed for someone who lives 10 miles away and someone who lives 20 miles away?
+\newline
+
+**Answer\:**
+\newline
+
+4. Suppose the unemployment rate in the United States goes from 6.4% in one year to 5.6% in the next. 
+\newline
+
+(i) What is the percentage point decrease in the unemployment rate?
+\newline
+
+**Answer\:**
+\newline
+
+(ii) By what percentage has the unemployment rate fallen?
+\newline
+
+**Answer\:**
+\newline
+
+7. Suppose the following model describes the relationship between annual salary (*salary*) and the number of previous years of labor market experience (*exper*): $$ log(\textit{salary}) = 10.6 + 0.027 \textit{exper} $$
+\newline
+
+(i) What is *salary* when *exper* = 0? When *exper* = 5? (*Hint: You will need to exponentiate.*)
+\newline
+
+**Answer\:**
+\newline
+
+(ii) Use equation (A.28) to approximate the percentage increase in *salary* when *exper* increases by 5 years.
+\newline
+
+**Answer\:**
+\newline
+
+(iii) Use the results of part (i) to compute the exact percentage difference in salary when *exper* = 5 and *exper* = 0. Comment on how this compares with the approximation in part (ii).
+\newline
+
+**Answer\:**
+\newline
+
+10. Suppose that in a particular state a standardized test is given to all graduating seniors. Let *score* denote a student's score on the test. Someone discovers that performance on the test is related to the size of the student's graduating high school class. The relationship is quadratic: $$ \textit{score} = 45.6 + 0.82\textit{class} - 0.000147\textit{class}^2 $$
+
+where *class* is the number of students in the graduating class. 
+\newline
+
+(i) How do you literally interpret the value 45.6 in the equation? By itself, is it of much interest?
+\newline
+
+**Answer\:**
+\newline
+
+(iii) Sketch a graph that illustrates your solution in part (ii).
+\newline
+
+**Answer\:**
+\newline
+
+
+## Appendix B
+**Questions: 2,4,9, and 10**
+\newline
+
+2. Let X be a random variable distributed as Normal(5,4). Find the probabilitites of the following events: 
+\newline
+
+(i) $P(X \leq 6)$
+\newline
+
+**Answer\:**
+\newline
+
+(ii) $P(X > 4)$
+\newline
+
+**Answer\:**
+\newline
+
+(iii) $P(\mid X - 5 \mid > 1)$
+\newline
+
+**Answer\:**
+\newline
+
+4. For a randomly selected county in the United States, let X represent the proportion of adults over age 65 who are employed, or the elderly employment rate. Then, X is restricted to a value between zero and one. Suppose that the cumulative distribution function for X is given by: $$F(x) = 3x^2 - 2x^3 \;\;\;\;\;\;\;\;\;\; for\;\;\; 0 \leq x \leq 1$$
+Find the probability that the elderly employment rate is at least .6 (60%).
+\newline
+
+**Answer\:**
+\newline
+
+9. Let X denote the annual salary of university professors in the United States, measured in thousands of dollars. Suppose that the average salary is 52.3, with a standard deviation of 14.6. Find the mean and standard deviation when salary is measured in dollars.
+\newline
+
+**Answer\:**
+\newline
+
+10. Suppose that at a large university, college grade point average, *GPA*, and SAT score *SAT*, are related by the conditional expectation: $$E(\textit{GPA}|\textit{SAT}) = 0.70 + 0.002\textit{SAT}$$
+\newline
+
+(i) Find the expected *GPA* when *SAT* = 800. Find: $$(\textit{GPA}|\textit{SAT}) = 1400$$. Comment on the difference.
+\newline
+
+**Answer\:**
+\newline
+
+(ii) If the average *SAT* in the university is 1,100, what is the average *GPA* (*Hint:* Use Property CE.4)
+\newline
+
+**Answer\:**
+\newline
+
+(iii) If a student's SAT score is 1,100, does this mean he or she will have the GPA found in part (ii)? Explain.
+\newline
+
+**Answer\:**
+\newline
+
+
+
