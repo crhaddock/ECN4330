@@ -1,0 +1,243 @@
+---
+title: "HW_1.5"
+author: "Group name: Chris and Earl's Econometric Adventure"
+date: "Sep 6, 2018"
+output:
+  pdf_document: default
+---
+\newpage
+
+```{r}
+library(scales)
+```
+
+## Appendix A
+**Questions: 2,4,7 (all parts), 10 (parts i and iii)**
+\newline
+
+2. Suppose the following equation describes the relationship between the average number of classes missed during a semester(*missed*) and the distance from school (*distance*, measured in miles): $$ \textit{missed} = 3 + 0.2 \textit{distance} $$
+\newline
+
+(i) Sketch this line, being sure to label the axes. How do you interpret the intercept in this equation?
+\newline
+```{r}
+distance <- c(0:30)
+missed <- 3 + 0.2*distance
+plot(distance,missed, xlim = c(1,30), ylim = c(1,30), xlab = "Distance From School", ylab = "Days Missed")
+abline(3,0.2, col = "red")
+```
+
+**Answer\:** The intercept in this equation is 3. This implies that a student is likely to miss at least 3 days regardless of the distance they live from school
+\newline
+
+(ii) What is the average number of classes missed for someone who lives five miles away?
+\newline
+```{r}
+fivemilesaway <- 3 + 0.2*5
+
+```
+
+**Answer\:** The average number of classes missed for someone who lives five miles away is `r fivemilesaway` classes.
+\newline
+
+(iii) What is the difference in the average number of classes missed for someone who lives 10 miles away and someone who lives 20 miles away?
+\newline
+```{r}
+tenmilesaway <- 3 + 0.2 * 10
+twentymilesaway <- 3 + 0.2 * 20
+difference <- twentymilesaway - tenmilesaway
+```
+
+
+**Answer\:** The difference in the average number of classes missed for someone who lives 10 miles away and someone who lives 20 miles away is `r difference` classes.
+\newline
+
+4. Suppose the unemployment rate in the United States goes from 6.4% in one year to 5.6% in the next. 
+\newline
+
+(i) What is the percentage point decrease in the unemployment rate?
+\newline
+
+**Answer\:** The unemployment rate in the United States decreased by `r 6.4 - 5.6`%.
+\newline
+
+(ii) By what percentage has the unemployment rate fallen?
+\newline
+
+**Answer\:** The percentage decrease in the unemployment rate is `r -1 * ((5.6 - 6.4)/6.4)*100`%.
+\newline
+
+7. Suppose the following model describes the relationship between annual salary (*salary*) and the number of previous years of labor market experience (*exper*): $$ log(\textit{salary}) = 10.6 + 0.027 \textit{exper} $$
+\newline
+
+$$ \textit{salary} = e{10.6 +0.027\textit{exper}}$$
+```{r}
+
+exper <- c(0:30)
+exponent <- 10.6 + 0.027*exper
+salary <- exp(exponent)
+
+exper
+salary
+plot(exper,salary, xlim = c(1, 30))
+```
+
+
+(i) What is *salary* when *exper* = 0? When *exper* = 5? (*Hint: You will need to exponentiate.*)
+\newline
+
+```{r}
+exper0 <- 0
+salary0 <- exponent <- exp(10.6 + 0.027*exper0)
+
+exper5 <- 5
+salary5 <- exponent <- exp(10.6 + 0.027*exper5)
+```
+
+
+**Answer\:** The salary when exper = 0 is `r dollar_format()(salary0)`. The salary when exper = 5 is `r dollar_format()(salary5)`
+\newline
+
+(ii) Use equation (A.28) to approximate the percentage increase in *salary* when *exper* increases by 5 years.
+\newline
+$$ \% \Delta y \approx (100 * \beta_1) \Delta x$$
+```{r}
+deltay <- (100 * 0.027) * 5
+```
+
+**Answer\:** The approximate increase in *salary* when *exper* increases by 5 years is `r deltay`%.
+\newline
+
+(iii) Use the results of part (i) to compute the exact percentage difference in salary when *exper* = 5 and *exper* = 0. Comment on how this compares with the approximation in part (ii).
+\newline
+
+```{r}
+deltaactual <- 100* ((salary5 - salary0)/salary0)
+```
+
+**Answer\:** The exact percentage difference in salary when *exper* = 5 and *exper* = 0 is `r deltaactual`%. This is a difference of `r -1*(deltay - deltaactual)`%.
+\newline
+
+10. Suppose that in a particular state a standardized test is given to all graduating seniors. Let *score* denote a student's score on the test. Someone discovers that performance on the test is related to the size of the student's graduating high school class. The relationship is quadratic: $$ \textit{score} = 45.6 + 0.82\textit{class} - 0.000147\textit{class}^2 $$
+
+where *class* is the number of students in the graduating class. 
+\newline
+
+```{r}
+classsize <- c(0:5000)
+score <- 45.6 + 0.82*classsize - (0.000147)*(classsize^2)
+plot(classsize, score, xlim = c(1,5000), ylim = c(1, 3000))
+
+score_derivative <- .82/(0.000147*2)
+maxscore <- max(score)
+maxscore
+score_derivative
+```
+
+
+(i) How do you literally interpret the value 45.6 in the equation? By itself, is it of much interest?
+\newline
+
+**Answer\:** 
+\newline
+
+(iii) Sketch a graph that illustrates your solution in part (ii).
+\newline
+
+**Answer\:**
+\newline
+
+
+## Appendix B
+**Questions: 2,4,9, and 10**
+\newline
+
+2. Let X be a random variable distributed as Normal(5,4). Find the probabilities of the following events: 
+\newline
+
+```{r}
+mean2 <- 5
+sd2 <- 4
+```
+
+
+(i) $P(X \leq 6)$
+```{r}
+zi <- (6-5)/4
+```
+
+
+**Answer\:** The probability of X $\leq$ 6 gives a z-score of `r zi` this gives the probability of 59.87%.
+\newline
+
+(ii) $P(X > 4)$
+\newline
+
+```{r}
+zii <- (4-5)/4
+```
+
+
+**Answer\:** The probability of X > 4 gives a z-score of `r zii` this gives the probability of 59.87%.
+\newline
+
+(iii) $P(\mid X - 5 \mid > 1)$
+\newline
+This means we want: $$P(X - 5 > 1) + P(X - 5 < -1)$$ $$P(X > 6) + P(X < 4)$$
+```{r}
+ziii6 <- (6 - 5)/4
+ziii4 <- (4 - 5)/4
+
+ziii6table <- .5987
+ziii4table <- .4013
+
+iiiprob <- (1 - ziii6table) + ziii4table
+```
+
+
+**Answer\:** This probability for:$P(X > 6) + P(X < 4)$ is `r iiiprob*100`%.
+\newline
+
+4. For a randomly selected county in the United States, let X represent the proportion of adults over age 65 who are employed, or the elderly employment rate. Then, X is restricted to a value between zero and one. Suppose that the cumulative distribution function for X is given by: $$F(x) = 3x^2 - 2x^3 \;\;\;\;\;\;\;\;\;\; for\;\;\; 0 \leq x \leq 1$$
+Find the probability that the elderly employment rate is at least .6 (60%).
+\newline
+
+```{r}
+elderemp <- seq(0,1,.01)
+distri <- 3*(elderemp**2) - 2*(elderemp**3)
+plot(elderemp,distri)
+```
+
+
+**Answer\:**
+\newline
+
+9. Let X denote the annual salary of university professors in the United States, measured in thousands of dollars. Suppose that the average salary is 52.3, with a standard deviation of 14.6. Find the mean and standard deviation when salary is measured in dollars.
+\newline
+
+**Answer\:**
+\newline
+
+10. Suppose that at a large university, college grade point average, *GPA*, and SAT score *SAT*, are related by the conditional expectation: $$E(\textit{GPA}|\textit{SAT}) = 0.70 + 0.002\textit{SAT}$$
+\newline
+
+(i) Find the expected *GPA* when *SAT* = 800. Find: $$(\textit{GPA}|\textit{SAT}) = 1400$$. Comment on the difference.
+\newline
+
+**Answer\:**
+\newline
+
+(ii) If the average *SAT* in the university is 1,100, what is the average *GPA* (*Hint:* Use Property CE.4)
+\newline
+
+**Answer\:**
+\newline
+
+(iii) If a student's SAT score is 1,100, does this mean he or she will have the GPA found in part (ii)? Explain.
+\newline
+
+**Answer\:**
+\newline
+
+
+
